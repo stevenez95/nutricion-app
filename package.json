@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "main": "main.js",
   "license": "MIT",
+  "author":"stevenez95",
+  "description":"nutricion-app",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +13,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "pack": "node_modules/.bin/electron-builder --dir",
-    "buildElectron": "node_modules/.bin/electron-builder --win"
+    "buildElectron": "node_modules/.bin/electron-builder --win",
+    "postinstall": "",
+    "install": "node-gyp install"
   },
   "private": true,
   "dependencies": {
@@ -27,8 +31,6 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "dotenv": "^4.0.0",
-    "electron-builder": "^19.27.3",
-    "electron-updater": "^2.8.9",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
@@ -41,6 +43,8 @@
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
     "electron": "^1.7.5",
+    "electron-builder": "^19.27.3",
+    "electron-updater": "^2.8.9",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
