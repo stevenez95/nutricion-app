@@ -5,20 +5,21 @@ const url = require('url');
 const updater = require("electron-updater");
 const autoUpdater = updater.autoUpdater;
 
-require('dotenv').config();
 
 let win = null;
+
 
 ///////////////////
 // Auto upadater //
 ///////////////////
-autoUpdater.requestHeaders = { "PRIVATE-TOKEN": "oGpqdMYeKbSkSkU76His" };
+
 autoUpdater.autoDownload = true;
 
-autoUpdater.setFeedURL({
-    provider: "generic",
-    url: "https://gitlab.com/stevenez95/nutricion-app/tree/master"
-});
+/*autoUpdater.setFeedURL({
+    provider: "github",
+    repo: "https://github.com/stevenez95/nutricion-app",
+    //token:GH_TOKEN
+});*/
 
 autoUpdater.on('checking-for-update', function () {
     sendStatusToWindow('Checking for update...');
@@ -53,32 +54,34 @@ autoUpdater.on('update-downloaded', function (info) {
     }, 1000);
 });
 
-autoUpdater.checkForUpdates();
+
 
 function sendStatusToWindow(message) {
     console.log(message);
 }
 
 app.on('ready', function () {
+  autoUpdater.checkForUpdates();
 
   // Initialize the window to our specified dimensions
   win = new BrowserWindow({width: 1000, height: 600});
 
   // Specify entry point
-  if (process.env.PACKAGE === 'true'){
-    win.loadURL(url.format({
-      pathname: path.join(__dirname, 'dist/index.html'),
+setTimeout(() => {
+  win.loadURL(url.format({
+      pathname: path.join(__dirname, '/index.html'),
       protocol: 'file:',
       slashes: true
     }));
-  } else {
-    win.loadURL(process.env.HOST);
-    win.webContents.openDevTools();
-  }
+}, 3000);
+
+
+    
+
 
   // Show dev tools
   // Remove this line before distributing
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools();
 
   // Remove window once app is closed
   win.on('closed', function () {

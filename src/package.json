@@ -1,0 +1,24 @@
+{
+  "name": "nutricion-app",
+  "version": "0.0.1",
+  "main": "electron-main.js",
+  "author":"stevenez95",
+  "description":"nutricion-app",
+  "dependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
+    "bootstrap": "^3.3.7",
+    "core-js": "^2.4.1",
+    "dotenv": "^4.0.0",
+    "electron-updater": "^2.8.9",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14"
+  }
+}

@@ -6,8 +6,11 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "build",
       "assets": [
+        "js/jquery.min.js",
+        "package.json",
+        "electron-main.js",
         "assets",
         "favicon.ico"
       ],
@@ -23,7 +26,6 @@
         "css/styles.css"
       ],
       "scripts": [
-        "js/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
